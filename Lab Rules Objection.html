@@ -1,0 +1,301 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Lab Rules Objection</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: one narrow column, three numbered steps (a real sequence), red masthead. */
+:root{
+  --bg:#fbf7f5; --surface:#ffffff; --fg:#1d1416; --muted:#6c5e60; --line:#eadfdc;
+  --accent:#a3122a; --accent-ink:#ffffff; --chip:#fdecea; --ok:#1f6b3a;
+  --head:'Inter Tight',Inter,system-ui,sans-serif; --body:Inter,system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#171113; --surface:#21181a; --fg:#f6eeec; --muted:#b9a9a7; --line:#3a2b2d;
+  --accent:#ff6b7d; --accent-ink:#2a0a10; --chip:#3a1d22; --ok:#7fd49c; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#171113; --surface:#21181a; --fg:#f6eeec; --muted:#b9a9a7; --line:#3a2b2d;
+  --accent:#ff6b7d; --accent-ink:#2a0a10; --chip:#3a1d22; --ok:#7fd49c; color-scheme:dark }
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:680px;margin:0 auto;padding-block:28px 56px;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));
+  display:flex;flex-direction:column;gap:22px}
+header{display:flex;flex-direction:column;gap:12px}
+.kicker{font-family:var(--head);font-weight:700;font-size:13px;color:var(--accent);letter-spacing:.04em;text-transform:uppercase}
+h1{font-family:var(--head);font-weight:800;font-size:clamp(30px,7vw,42px);line-height:1.08;margin:0;text-wrap:balance}
+.lede{margin:0;color:var(--muted);max-width:60ch}
+.deadline{align-self:flex-start;background:var(--accent);color:var(--accent-ink);font-family:var(--head);font-weight:700;border-radius:999px;padding:8px 16px}
+section{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:14px;min-width:0}
+h2{font-family:var(--head);font-weight:700;font-size:21px;margin:0;display:flex;align-items:center;gap:10px}
+h2 span{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--chip);color:var(--accent);font-size:15px}
+.hint{margin:0;color:var(--muted);font-size:14.5px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:520px){.fields{grid-template-columns:1fr}}
+label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:14px;min-width:0}
+input,textarea{font:inherit;font-weight:400;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px 12px;width:100%;box-sizing:border-box}
+textarea{min-height:420px;resize:vertical;font-size:14.5px;line-height:1.5}
+input:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.meta{display:flex;flex-direction:column;gap:10px;margin:0}
+.row{display:grid;grid-template-columns:70px 1fr auto;gap:10px;align-items:start}
+.row dt{font-weight:600;color:var(--muted);font-size:14px;padding-top:2px}
+.row dd{margin:0;min-width:0;overflow-wrap:anywhere;font-size:14.5px;user-select:all}
+.copy{font:inherit;font-size:13.5px;font-weight:600;background:var(--chip);color:var(--accent);border:0;border-radius:8px;padding:7px 12px;cursor:pointer;white-space:nowrap}
+.send{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.send{grid-template-columns:1fr}}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-family:var(--head);font-weight:700;font-size:16px;border-radius:12px;padding:14px;border:1px solid var(--line);color:var(--fg);background:var(--bg)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.toast{margin:0;min-height:1.4em;font-weight:600;color:var(--ok);font-size:14.5px}
+ol{margin:0;padding-left:20px;color:var(--muted);font-size:14.5px;display:flex;flex-direction:column;gap:4px}
+footer{color:var(--muted);font-size:13px;display:flex;flex-direction:column;gap:6px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="kicker">Public objection · G.S.R. 864(E)</div>
+  <h1>Object to the draft lab animal rules</h1>
+  <p class="lede">The draft would let labs approve most experiments on every species in-house, drop the 1998 rule making anaesthesia mandatory, and end funded rehabilitation of animals after experiments. Your letter below cites each rule and the objection for the same. Add your name, check it, and send it from your own email. (P.S. I have taken the template from @socktalks.tv)</p>
+  <div class="deadline">Last date: 5 November 2026</div>
+</header>
+
+<section aria-labelledby="s1">
+  <h2 id="s1"><span>1</span>Add your details</h2>
+  <div class="fields">
+    <label for="name">Full name<input id="name" type="text" autocomplete="name" placeholder="e.g. Asha Kulkarni"></label>
+    <label for="city">City and state<input id="city" type="text" autocomplete="address-level2" placeholder="e.g. Pune, Maharashtra"></label>
+  </div>
+  <p class="hint">Your details stay on this screen. Nothing is sent until you press Send in your own email.</p>
+</section>
+
+<section aria-labelledby="s2">
+  <h2 id="s2"><span>2</span>Check the letter</h2>
+  <p class="hint">Edit anything you like. A line in your own words makes it stronger and is encouraged.</p>
+  <dl class="meta">
+    <div class="row"><dt>To</dt><dd id="toText">cpcsea-mef@gov.in</dd><button class="copy" id="copyTo" type="button">Copy</button></div>
+    <div class="row"><dt>Subject</dt><dd id="subjText"></dd><button class="copy" id="copySubj" type="button">Copy</button></div>
+  </dl>
+  <label for="letter">Letter<textarea id="letter" spellcheck="true"></textarea></label>
+  <button class="copy" id="copyLetter" type="button" style="align-self:flex-start">Copy the whole letter</button>
+</section>
+
+<section aria-labelledby="s3">
+  <h2 id="s3"><span>3</span>Send it</h2>
+  <p class="hint">Pick your email. It opens a new message with the address, subject and letter filled in. Check it there, then press Send.</p>
+  <div class="send">
+    <a class="btn primary" id="gmail" href="https://mail.google.com/" target="_blank" rel="noopener">Gmail</a>
+    <a class="btn" id="outlook" href="https://outlook.live.com/" target="_blank" rel="noopener">Outlook / Hotmail</a>
+    <a class="btn" id="yahoo" href="https://mail.yahoo.com/" target="_blank" rel="noopener">Yahoo Mail</a>
+    <a class="btn" id="mailapp" href="mailto:cpcsea-mef@gov.in">Phone's mail app</a>
+  </div>
+  <p class="toast" id="toast" role="status" aria-live="polite"></p>
+  <p class="hint"><b>If your email opens empty, or the mail app button does nothing:</b></p>
+  <ol>
+    <li>Tap "Copy the whole letter" above.</li>
+    <li>Start a new email to cpcsea-mef@gov.in.</li>
+    <li>Copy in the subject, paste the letter, and send.</li>
+  </ol>
+</section>
+
+<footer>
+  <span>The email address and postal address are the ones given in the Gazette notification G.S.R. 864(E), published 6 October 2026. Rule numbers refer to the draft, the Breeding of and Experiments on Animals (Control and Supervision) Rules, 1998, and their 2006 amendment.</span>
+  <span>One letter per person, from your own email. It is advised to add your own points.</span>
+</footer>
+</div>
+
+<script>
+var TO = 'cpcsea-mef@gov.in';
+var SUBJECT = 'Objection to the Draft Prevention of Cruelty to Animals (Control and Supervision of Experiment, Breeding and Trading of Laboratory Animals) Rules, 2026, G.S.R. 864(E)';
+var TEMPLATE = [
+'To,',
+
+'The Member Secretary,',
+
+'Committee for Control and Supervision of Experiments on Animals (CCSEA),',
+
+'Office of CCSEA, Near State Bank of India, Delhi Milk Scheme Complex,',
+
+'Shadipur, Delhi 110008',
+
+'',
+
+'Date: {DATE}',
+
+'',
+
+'Subject: Objections to the Draft Rules notified as G.S.R. 864(E)',
+
+'',
+
+'Sir/Madam,',
+
+'',
+
+'I object to the draft rules notified as G.S.R. 864(E) and published in the Gazette on 6 October 2026. I request that they be withdrawn and revised in light of the following objections.',
+
+'',
+
+'1. Rule 11(3): Approval of experiments by IAECs.',
+
+'',
+
+'Rule 11(3) sends mild and moderate experiments on all species, including dogs and non-human primates, to the establishment\'s own Institutional Animal Ethics Committee (IAEC) and bars referral to CCSEA.',
+
+'',
+
+'Objection: This provision removes independent oversight by CCSEA for experiments on animals beyond rodents and rabbits, regardless of the species involved. Experiments on animals above the rodent and rabbit categories should continue to require independent CCSEA approval, including where the experiments are classified as mild or moderate.',
+
+'',
+
+'2. Rules 7(1) and 11(10): Classification of experimental severity.',
+
+'',
+
+'Under Rules 7(1) and 11(10), the establishment and its own veterinarian grade the severity of an experiment, and that grade determines whether CCSEA reviews it.',
+
+'',
+
+'Objection: Allowing the establishment conducting an experiment to determine its severity without independent verification creates a potential conflict of interest and may result in experiments being classified at a lower severity than warranted. Severity classifications should be subject to independent assessment and verification.',
+
+'',
+
+'3. Rule 9 of the 1998 Rules and Schedule III, item 10(g): Animal welfare safeguards.',
+
+'',
+
+'The protections in Rule 9 of the 1998 Rules are not carried over, including mandatory anaesthesia for procedures more severe than a simple inoculation, the immediate humane killing of an animal in severe pain, and the prohibition on debarking dogs. Schedule III, item 10(g), instead permits a protocol to justify withholding anaesthetics or analgesics.',
+
+'',
+
+'Objection: Omitting these explicit safeguards risks weakening protections against avoidable pain and distress. The mandatory anaesthesia requirement, the requirement for prompt humane euthanasia where an animal is experiencing severe pain, and the prohibition on debarking dogs should be expressly restored. Any exception to anaesthesia or analgesia should be narrowly defined, independently reviewed, and scientifically justified.',
+
+'',
+
+'4. Rule 9(cc) of the 2006 amendment: Post-experiment rehabilitation.',
+
+'',
+
+'The duty on investigators to rehabilitate animals after experiments, with the costs included in the research budget for the animal\'s expected lifespan, is replaced by rehabilitation "wherever required".',
+
+'',
+
+'Objection: This wording weakens the explicit responsibility to provide for animals after experiments and leaves the circumstances requiring rehabilitation unclear. The investigator\'s duty to arrange and fund appropriate rehabilitation and aftercare should be restored, with clear standards for determining when rehabilitation is required.',
+
+'',
+
+'5. Rules 5(3) and 21(2): Use and procurement of animals.',
+
+'',
+
+'Rule 5(3) permits stray and feral animals to be used under an exemption granted by a "competent authority" that the draft does not define. Rule 21(2) permits certain animals to be procured from non-registered establishments or the open market with IAEC approval, whereas the 2006 amendment required written permission from a competent legal authority for procurement from non-registered sources.',
+
+'',
+
+'Objection: The undefined authority and broad exemption language in Rule 5(3) leave uncertainty about who may authorise the use of stray and feral animals and under what enforceable safeguards. Rule 21(2) also weakens independent control over animal sourcing. The competent authority, eligibility criteria, and safeguards should be clearly defined, and procurement from non-registered sources should require written permission from the appropriate independent authority, in addition to IAEC approval where applicable.',
+
+'',
+
+'6. Rules 2(i) and 24(4): Facility requirements and inspections.',
+
+'',
+
+'Rule 2(i) permits establishments that are not enclosed or covered, as well as mobile facilities. Rule 24(4) requires CCSEA inspections to be announced in advance.',
+
+'',
+
+'Objection: Permitting facilities without clear enclosure and containment requirements may compromise animal welfare, biosecurity, and effective supervision. Advance notice of inspections may also allow establishments to temporarily conceal non-compliance. The rules should prescribe appropriate minimum facility and containment standards and permit unannounced inspections, particularly where compliance or animal welfare is in question.',
+
+'',
+
+'7. Rules 25 and 26: Enforcement and appeals.',
+
+'',
+
+'Rule 25 gives establishments 15 days to remedy violations and does not specify arrangements for the care and protection of animals when an establishment\'s registration is revoked. Rule 26 provides a right of appeal to establishments only.',
+
+'',
+
+'Objection: A fixed period to remedy violations may be inadequate where animal welfare is at immediate risk, and the absence of explicit provisions for animals following revocation leaves their protection uncertain. The rules should permit immediate protective action in urgent cases and establish clear arrangements for the safe transfer and continued care of affected animals. The appeal framework should also ensure appropriate procedural fairness without compromising urgent animal-welfare measures.',
+
+'',
+
+'In view of these objections, I request that the draft rules be withdrawn and revised to retain adequate independent oversight, clear and enforceable welfare safeguards, and effective accountability mechanisms.',
+
+'',
+
+'Kindly acknowledge receipt of this objection.',
+
+'',
+
+'Yours faithfully,',
+
+'{NAME}',
+
+'{CITY}'
+].join('\n');
+
+var $ = function(id){ return document.getElementById(id); };
+var edited = false;
+var today = new Date().toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' });
+function enc(s){ return encodeURIComponent(s); }
+function fill(){
+  var n = $('name').value.trim() || '[Your full name]';
+  var c = $('city').value.trim() || '[City, State]';
+  return TEMPLATE.replace('{DATE}', today).replace('{NAME}', n).replace('{CITY}', c);
+}
+function body(){ return $('letter').value; }
+function updateLinks(){
+  var b = body();
+  $('gmail').href = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + enc(TO) + '&su=' + enc(SUBJECT) + '&body=' + enc(b);
+  $('outlook').href = 'https://outlook.live.com/mail/0/deeplink/compose?to=' + enc(TO) + '&subject=' + enc(SUBJECT) + '&body=' + enc(b);
+  $('yahoo').href = 'https://compose.mail.yahoo.com/?to=' + enc(TO) + '&subject=' + enc(SUBJECT) + '&body=' + enc(b);
+  $('mailapp').href = 'mailto:' + TO + '?subject=' + enc(SUBJECT) + '&body=' + enc(b);
+}
+function refresh(){
+  if (!edited) { $('letter').value = fill(); }
+  else {
+    var v = $('letter').value, n = $('name').value.trim(), c = $('city').value.trim();
+    if (n) v = v.replace('[Your full name]', n);
+    if (c) v = v.replace('[City, State]', c);
+    $('letter').value = v;
+  }
+  updateLinks();
+}
+function say(m){ $('toast').textContent = m; }
+function copyText(text, label){
+  var fallback = function(){
+    if (label === 'Letter') { $('letter').focus(); $('letter').select(); say('Letter selected. Use Copy from your keyboard or menu.'); }
+    else { say('Copy did not work here. Press and hold the text to copy it.'); }
+  };
+  try { navigator.clipboard.writeText(text).then(function(){ say(label + ' copied.'); }, fallback); }
+  catch (e) { fallback(); }
+}
+
+$('subjText').textContent = SUBJECT;
+try {
+  var saved = JSON.parse(localStorage.getItem('lab-objection-details') || '{}');
+  if (saved.name) $('name').value = saved.name;
+  if (saved.city) $('city').value = saved.city;
+} catch (e) {}
+refresh();
+
+['name','city'].forEach(function(id){
+  $(id).addEventListener('input', function(){
+    refresh();
+    try { localStorage.setItem('lab-objection-details', JSON.stringify({ name:$('name').value, city:$('city').value })); } catch (e) {}
+  });
+});
+$('letter').addEventListener('input', function(){ edited = true; updateLinks(); });
+$('copyTo').addEventListener('click', function(){ copyText(TO, 'Email address'); });
+$('copySubj').addEventListener('click', function(){ copyText(SUBJECT, 'Subject'); });
+$('copyLetter').addEventListener('click', function(){ copyText(body(), 'Letter'); });
+['gmail','outlook','yahoo','mailapp'].forEach(function(id){
+  $(id).addEventListener('click', function(){
+    updateLinks();
+    var tip = $('name').value.trim() ? '' : ' Add your name in step 1 so the letter is signed.';
+    say('Opening your email. Check the message, then press Send there.' + tip);
+    try { navigator.clipboard.writeText(body()).catch(function(){}); } catch (e) {}
+  });
+});
+</script>
+
+</body></html>
